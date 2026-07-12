@@ -1,0 +1,297 @@
+:root {
+  --u: 5vmin; /* Base unit size */
+  --bg: #ffffff;
+  --mass: #000000;
+  --text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+#swiss-layer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1000;
+  padding: 40px;
+  transition: transform 0.1s linear;
+}
+
+/* IDEA 4: POSTER FLIP (Fullscreen Typography Takeover) */
+#poster-flip {
+  position: fixed; /* Changed from absolute to fixed to follow scroll on mobile */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #fff;
+  color: #000;
+  z-index: 3000;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  
+  /* Aggressive animation state */
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.05); /* Slam down effect */
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#poster-flip.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.flip-header {
+  margin-bottom: 5vh;
+}
+
+#close-btn {
+  background: transparent;
+  color: #000;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-size: 2vw;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+}
+
+#close-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.flip-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#flip-title {
+  font-size: 14vw;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+  margin-bottom: 6vh;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+.newspaper-columns {
+  column-count: 3;
+  column-gap: 60px;
+  column-rule: 4px solid #000;
+  font-size: 1.2vw;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: justify;
+}
+
+.header-right {
+  position: absolute;
+  top: 40px; right: 40px;
+  text-align: right;
+}
+.header-right h1, .header-right h2 {
+  font-size: 3.5vw;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  /* Increased from 0.9 to 1.05 to prevent Mongolian ascender/descender collisions */
+  line-height: 1.05; 
+}
+
+.footer-left {
+  position: absolute;
+  bottom: 40px; left: 40px;
+  border-left: 2px solid #000;
+  padding-left: 15px;
+}
+.footer-left p {
+  font-size: 1.2vw;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Pure 2D Universe */
+#universe {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  transition: transform 0.1s linear;
+}
+
+/* The Mass Block Container */
+.mass {
+  position: absolute;
+  /* Top and Left are set inline in HTML to place the front-most vertex */
+}
+
+/* The Flat Vector Faces */
+.face {
+  position: absolute;
+  top: 0; left: 0;
+  transform-origin: 0 0;
+  background-color: var(--mass);
+  color: var(--text);
+  /* Since it's a flat 2D projection, we add a microscopic outline to kill any subpixel browser rendering cracks between the 2D SVG-like divs */
+  outline: 1px solid var(--mass);
+  transition: background-color 0.2s ease, color 0.2s ease, outline-color 0.2s ease;
+  overflow: hidden; /* Ensure text never breaches the mathematically precise vector face */
+}
+
+/* Interactive Hover Inversion */
+.mass:hover .face {
+  background-color: #fff;
+  color: #000;
+  outline-color: #000;
+}
+
+/* 
+  PERFECT 2D ISOMETRIC MATRICES
+  Origin (0,0) is the front-most vertex of the isometric solid block.
+  All faces share this single vertex point and fan out from it, mathematically eliminating ALL tearing and inside-out glitches.
+*/
+
+/* Top Face */
+.face-top {
+  width: calc(var(--w) * var(--u));
+  height: calc(var(--d) * var(--u));
+  transform: matrix(0.866025, -0.5, -0.866025, -0.5, 0, 0);
+}
+
+/* Right Face (Faces Down-Right on screen) */
+.face-right {
+  width: calc(var(--w) * var(--u));
+  height: calc(var(--h) * var(--u));
+  transform: matrix(0.866025, -0.5, 0, 1, 0, 0);
+}
+
+/* Left Face (Faces Down-Left on screen) */
+.face-left {
+  width: calc(var(--d) * var(--u));
+  height: calc(var(--h) * var(--u));
+  transform: matrix(-0.866025, -0.5, 0, 1, 0, 0);
+}
+
+/* Typography on Faces */
+.huge {
+  position: absolute;
+  top: 0; left: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  /* Reduced font size multiplier so 11-letter words easily fit horizontally without clipping */
+  font-size: calc(var(--w) * 0.14 * var(--u));
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  padding-top: 1vmin; 
+  padding-left: 1vmin;
+}
+
+/* RESPONSIVE MOBILE LAYOUT */
+@media (max-width: 768px) {
+  :root {
+    --u: 6vw; /* Perfectly scaled base unit for mobile */
+  }
+
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Typography Layer flows naturally at the top */
+  #swiss-layer {
+    position: relative;
+    top: auto; left: auto; right: auto; bottom: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 40px;
+    z-index: 10;
+  }
+
+  .header-right {
+    position: relative;
+    top: auto; right: auto; left: auto; bottom: auto;
+    text-align: left;
+    padding-bottom: 30px;
+  }
+
+  .header-right h1, .header-right h2 {
+    font-size: 13vw;
+    line-height: 0.95;
+  }
+
+  .footer-left {
+    position: relative;
+    top: auto; right: auto; left: auto; bottom: auto;
+    text-align: left;
+    border-top: 4px solid #000;
+    padding-top: 20px;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .footer-left p {
+    font-size: 4.5vw;
+  }
+
+  /* Universe flows naturally below typography */
+  #universe {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    transform: none !important;
+  }
+
+  /* Blocks perfectly calculated to never overlap */
+  .mass {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-left: 35vw; /* Centers the isometric solid horizontally */
+    /* Dynamic margins based on the exact dimensions of the isometric projection */
+    margin-top: calc((var(--w) + var(--d)) * var(--u) * 0.5 + 40px);
+    margin-bottom: calc(var(--h) * var(--u) + 40px);
+  }
+
+  /* Poster Flip overrides */
+  #poster-flip {
+    padding: 20px;
+    overflow-y: auto; 
+  }
+  #flip-title {
+    font-size: 16vw; 
+    margin-bottom: 30px;
+  }
+  .newspaper-columns {
+    column-count: 1; 
+    font-size: 4.5vw; 
+  }
+  #close-btn {
+    font-size: 5vw;
+  }
+}
