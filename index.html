@@ -1,74 +1,267 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="mn">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Даваажаргал | Бруталист Постер</title>
+    <title>Даваажаргал | Бүтээлч Инженер</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     
-    <div id="swiss-layer">
-      <!-- Logo block removed as requested -->
-
-      <div class="header-right">
-        <h1>Даваажаргал</h1>
-        <h2>&mdash; Интерактив Портфолио</h2>
-        <h1>Тусгай &mdash; / React</h1>
-      </div>
-
-      <div class="footer-left">
-        <p>FRONT-END FOCUSED FULLSTACK ENGINEER<br>
-        Улаанбаатар хот / 14200<br>
-        www.davaajargal.dev<br>
-        www.github.com/gankk</p>
-      </div>
-    </div>
-
-    <!-- PURE 2D VECTOR MASS ENGINE -->
-    <div id="universe">
+    <div id="editorial-layout">
       
-      <!-- MASS 1: Top Left -->
-      <div class="mass" data-id="software-engineer" style="top: 25vh; left: 20vw; --w: 11; --d: 6; --h: 8;">
-        <div class="face face-top"></div>
-        <div class="face face-left"></div>
-        <div class="face face-right">
-          <h1 class="huge">ДАВААЖАРГАЛ<br>FRONT-END<br>FOCUSED<br>FULLSTACK</h1>
+      <!-- COLUMN 1: BRAND / INTRO -->
+      <div class="col" data-index="0">
+        <div class="col-default">
+          <div class="col-header">
+            <div class="meta-text">ҮҮСГЭВ. 2026</div>
+            <div class="meta-text">ПОРТФОЛИО v3.0</div>
+          </div>
+          <div class="col-body">
+            <div class="giant-vertical-text">хөгжүүлэгч</div>
+            <div class="sub-vertical-text">даваажаргал</div>
+          </div>
+          <div class="col-footer">
+            <div class="meta-text">БҮТЭЭЛЧ ИНЖЕНЕР</div>
+            <div class="meta-text">МОНГОЛ УЛС</div>
+          </div>
+        </div>
+        
+        <!-- EXPANDED CONTENT -->
+        <div class="col-expanded">
+          <button class="close-btn">БУЦАХ</button>
+          <div class="expanded-body">
+            <h2 class="expanded-title">МИНИЙ ТУХАЙ</h2>
+            <p class="expanded-p">
+              Намайг Даваажаргал гэдэг. Одоо 18 настай. Нийслэлийн 44-р дунд сургуулийг дүүргэж, улмаар Indra Cyber Institute-ийг 3.5 GPA-тай төгссөн.
+            </p>
+            <p class="expanded-p">
+              Орчин үеийн вэб технологи, WebGL болон 3D графикийн математик тооцооллыг сонирхон судалдаг бөгөөд архитектур хэв маягтай бүтээлч вэб хөгжүүлэлтийн чиглэлд суралцаж байна.
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- MASS 2: Middle Right -->
-      <div class="mass" data-id="ui-designer" style="top: 55vh; left: 75vw; --w: 7; --d: 5; --h: 10;">
-        <div class="face face-top"></div>
-        <div class="face face-left"></div>
-        <div class="face face-right">
-          <h1 class="huge">UI / UX<br>ИНТЕРАКТИВ<br>ДИЗАЙНЕР</h1>
+      <!-- COLUMN 2: PLAYGROUND / RESEARCH -->
+      <div class="col" data-index="1">
+        <div class="col-default">
+          <div class="col-header">
+            <div class="meta-text">СУДАЛГАА</div>
+            <div class="meta-text">ТУРШИЛТ</div>
+          </div>
+          <div class="col-body centered">
+            <div class="giant-stat-text">03</div>
+            <div class="specs-container">
+              <div class="spec-row">
+                <span class="spec-label">WEBGL</span>
+                <span class="spec-val">GPU ШЕЙДЕР</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">МАТРИЦ</span>
+                <span class="spec-val">ИЗОМЕТРИК МАТЕМАТИК</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">ГЕОМЕТР</span>
+                <span class="spec-val">ПРОЦЕДУРАЛ ВОКСЕЛ</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-footer centered">
+            <div class="badge-circle">D&J</div>
+          </div>
+        </div>
+
+        <!-- EXPANDED CONTENT - Amiens Poster Grid Layout -->
+        <div class="col-expanded amiens-expanded" style="padding: 0; position: absolute;">
+          <button class="close-btn dark" style="position: absolute; top: 2vh; left: 2vh; z-index: 10;">БУЦАХ</button>
+          
+          <div class="amiens-grid-poster">
+            
+            <!-- ROW 1 -->
+            <div class="amiens-cell span-5-1">
+              <div class="amiens-title">ТУРШИЛТ</div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+
+            <!-- ROW 2 -->
+            <div class="amiens-cell span-6-1">
+              <div class="amiens-title">БА СУДАЛГАА</div>
+            </div>
+
+            <!-- ROW 3 -->
+            <div class="amiens-cell">
+              <div class="amiens-meta">
+                <div class="amiens-label">01 / WEBGL</div>
+                <div class="amiens-val">GPU ШЕЙДЕР</div>
+              </div>
+            </div>
+            <div class="amiens-cell">
+              <div class="amiens-meta">
+                <div class="amiens-label">СЭДЭВ</div>
+                <div class="amiens-val">GLSL ШЕЙДЕРҮҮД</div>
+              </div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+            <div class="amiens-cell">
+              <div class="amiens-meta">
+                <div class="amiens-label">02 / МАТРИЦ</div>
+                <div class="amiens-val">ИЗОМЕТРИК МАТЕМАТИК</div>
+              </div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+            <div class="amiens-cell">
+              <div class="amiens-meta">
+                <div class="amiens-label">СЭДЭВ</div>
+                <div class="amiens-val">2D ПРОЕКЦУУД</div>
+              </div>
+            </div>
+
+            <!-- ROW 4 -->
+            <div class="amiens-cell span-5-1">
+              <div class="amiens-title">ЭРЭЛХИЙЛЭЛ</div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+
+            <!-- ROW 5 -->
+            <div class="amiens-cell">
+              <div class="amiens-meta">
+                <div class="amiens-label">03 / ГЕОМЕТР</div>
+                <div class="amiens-val">ПРОЦЕДУРАЛ АЛГОРИТМ</div>
+              </div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+            <div class="amiens-cell">
+              <div class="amiens-meta">
+                <div class="amiens-label">СЭДЭВ</div>
+                <div class="amiens-val">ВОКСЕЛ БҮТЭЦ</div>
+              </div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+            <div class="amiens-cell">
+              <div class="amiens-meta">
+                <div class="amiens-label">ЗОРИЛТ</div>
+                <div class="amiens-val">60FPS ЗУРАГЛАЛ</div>
+              </div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+
+            <!-- ROW 6 -->
+            <div class="amiens-cell span-5-1">
+              <div class="amiens-title">2026 ОН</div>
+            </div>
+            <div class="amiens-cell diagonal"></div>
+
+          </div>
         </div>
       </div>
 
-      <!-- MASS 3: Bottom Center -->
-      <div class="mass" data-id="fullstack" style="top: 80vh; left: 45vw; --w: 8; --d: 5; --h: 6;">
-        <div class="face face-top"></div>
-        <div class="face face-left"></div>
-        <div class="face face-right">
-          <h1 class="huge">NEXT.JS<br>& DJANGO</h1>
+      <!-- COLUMN 3: SKILLS -->
+      <div class="col" data-index="2">
+        <div class="col-default">
+          <div class="col-header">
+            <div class="meta-text">ЧАДВАРУУД</div>
+            <div class="meta-text">ҮНДСЭН ТЕХНОЛОГИ</div>
+          </div>
+          <div class="col-body">
+            <div class="giant-vertical-text">хэв маяг</div>
+            <div class="specs-container" style="margin-top: auto; margin-bottom: 2vw;">
+              <div class="spec-row"><span class="spec-label">NEXTJS</span><span class="spec-val">ВЭБ ФРЭЙМВОРК</span></div>
+              <div class="spec-row"><span class="spec-label">REACT / THREEJS</span><span class="spec-val">ИНТЕРФЕЙС & 3D</span></div>
+              <div class="spec-row"><span class="spec-label">TAILWIND</span><span class="spec-val">ЗАГВАРЧЛАЛ</span></div>
+              <div class="spec-row"><span class="spec-label">PRISMA / MYSQL</span><span class="spec-val">ӨГӨГДЛИЙН САН</span></div>
+            </div>
+            <div class="giant-vertical-text" style="font-size: 7.5vw;">грам</div>
+          </div>
+          <div class="col-footer">
+            <div class="meta-text">250 ГРАМ</div>
+            <div class="meta-text">PMS ХӨХ 072</div>
+          </div>
+        </div>
+
+        <!-- EXPANDED CONTENT -->
+        <div class="col-expanded">
+          <button class="close-btn">БУЦАХ</button>
+          <div class="expanded-body">
+            <h2 class="expanded-title">ТЕХНОЛОГИЙН ЧАДВАР</h2>
+            <div class="skills-grid">
+              <div class="skill-group">
+                <h4 class="skill-heading">ФРОНТЭНД & 3D ГРАФИК</h4>
+                <p class="expanded-p">ReactJS, Next.js, Three.js, TailwindCSS, CSS Variables, Responsive Web Design.</p>
+              </div>
+              <div class="skill-group" style="margin-top: 15px;">
+                <h4 class="skill-heading">БЭКЭНД & ӨГӨГДЛИЙН САН</h4>
+                <p class="expanded-p">Prisma ORM, MySQL, API хөгжүүлэлт, өгөгдлийн сангийн бүтэц, зохион байгуулалт.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
+
+      <!-- COLUMN 4: CONTACT (Updated default footer links to actual anchor tags) -->
+      <div class="col" data-index="3">
+        <div class="col-default">
+          <div class="col-header">
+            <div class="meta-text">ХОЛБООС</div>
+            <div class="meta-text">ХОЛБОО БАРИХ</div>
+          </div>
+          <div class="col-body">
+            <div class="giant-vertical-text">холбоо</div>
+            <div class="sub-vertical-text">илгээх</div>
+          </div>
+          <div class="col-footer">
+            <div class="contact-links">
+              <a href="mailto:86dawaajargal@gmail.com" class="contact-link">86dawaajargal@gmail.com</a>
+              <a href="https://t.me/nightrainlover.86" class="contact-link" target="_blank" rel="noopener noreferrer">t.me/nightrainlover.86</a>
+              <a href="viber://chat?number=+97695238963" class="contact-link">viber: +976 95238963</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPANDED CONTENT -->
+        <div class="col-expanded">
+          <button class="close-btn">БУЦАХ</button>
+          <div class="expanded-body">
+            <h2 class="expanded-title">ХОЛБОО БАРИХ</h2>
+            <p class="expanded-p">Интерактив вэб төсөл, судалгааны ажил дээр хамтран ажиллах боломжтой.</p>
+            <div class="contact-details-expanded" style="margin-top: 20px;">
+              <div class="spec-row"><span class="spec-label">И-МЭЙЛ</span><a href="mailto:86dawaajargal@gmail.com" class="expanded-link">86dawaajargal@gmail.com</a></div>
+              <div class="spec-row" style="margin-top: 10px;"><span class="spec-label">ТЕЛЕГРАМ</span><a href="https://t.me/nightrainlover.86" class="expanded-link" target="_blank" rel="noopener noreferrer">t.me/nightrainlover.86</a></div>
+              <div class="spec-row" style="margin-top: 10px;"><span class="spec-label">ВАЙБЕР</span><a href="viber://chat?number=+97695238963" class="expanded-link">+976 9523 8963</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- IDEA 4: THE POSTER FLIP (Fullscreen Typography Takeover) -->
-    <div id="poster-flip">
-      <div class="flip-header">
-        <button id="close-btn">&larr; БУЦАХ</button>
-      </div>
-      <div class="flip-content">
-        <h1 id="flip-title">СИСТЕМ</h1>
-        <div id="flip-desc" class="newspaper-columns">
-          Мэдээлэл уншиж байна...
-        </div>
-      </div>
-    </div>
+    <script type="module">
+      const columns = document.querySelectorAll('.col');
+      const closeButtons = document.querySelectorAll('.close-btn');
 
-    <script type="module" src="/src/main.js"></script>
+      columns.forEach(col => {
+        col.addEventListener('click', (e) => {
+          if (e.target.classList.contains('close-btn')) return;
+          const hasActive = document.querySelector('.col.active');
+          if (hasActive) return;
+          col.classList.add('active');
+          document.getElementById('editorial-layout').classList.add('column-active');
+        });
+      });
+
+      closeButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const activeCol = document.querySelector('.col.active');
+          if (activeCol) {
+            activeCol.classList.remove('active');
+            document.getElementById('editorial-layout').classList.remove('column-active');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
