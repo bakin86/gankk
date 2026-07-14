@@ -11,7 +11,7 @@ body, html {
   height: 100vh;
   background-color: var(--bg);
   overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -82,7 +82,7 @@ body, html {
 
 /* Poster Title text style */
 .poster-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -0.04em;
@@ -231,7 +231,7 @@ body, html {
 }
 
 .giant-vertical-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
   font-size: 8.5vw;
   line-height: 0.8;
@@ -253,7 +253,7 @@ body, html {
 }
 
 .sub-vertical-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
   font-size: 5vw;
   line-height: 0.8;
@@ -266,7 +266,7 @@ body, html {
 }
 
 .giant-stat-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
   font-size: 13vw;
   line-height: 0.9;
@@ -325,7 +325,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
   font-size: 16px;
   letter-spacing: 0.05em;
@@ -416,7 +416,7 @@ body, html {
   color: var(--bg);
   border: none;
   padding: 10px 20px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -538,7 +538,7 @@ body, html {
 }
 
 .amiens-title {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
   line-height: 0.85;
   font-size: 8.5vh;
